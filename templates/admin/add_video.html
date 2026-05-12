@@ -1,0 +1,258 @@
+<!-- templates/admin/add_video.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Tambah Video</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet">
+
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+<style>
+
+body{
+    background:#f8f5f1;
+    font-family:sans-serif;
+}
+
+.card-form{
+    border:none;
+    border-radius:25px;
+}
+
+.btn-coklat{
+    background:#8B5E3C;
+    color:white;
+    border:none;
+    border-radius:12px;
+}
+
+.btn-coklat:hover{
+    background:#6f472b;
+    color:white;
+}
+
+.form-control,
+.form-select{
+    border-radius:12px;
+    padding:12px;
+}
+
+textarea{
+    resize:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container py-5">
+
+    <div class="row justify-content-center">
+
+        <div class="col-md-8">
+
+            <div class="card card-form shadow-sm">
+
+                <div class="card-body p-5">
+
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+
+                        <div>
+
+                            <h3 class="fw-bold mb-1">
+                                Tambah Video Tutorial
+                            </h3>
+
+                            <small class="text-muted">
+                                Tambahkan video pembelajaran anyaman
+                            </small>
+
+                        </div>
+
+                        <i class="bi bi-play-circle-fill"
+                           style="font-size:45px;color:#8B5E3C;"></i>
+
+                    </div>
+
+
+                    <form method="POST"
+                          enctype="multipart/form-data">
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Thumbnail Video
+                            </label>
+
+                            <input type="file"
+                                   name="thumbnail"
+                                   class="form-control"
+                                   required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Judul Video
+                            </label>
+
+                            <input type="text"
+                                   name="judul_video"
+                                   class="form-control"
+                                   placeholder="Masukkan judul video"
+                                   required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Kategori
+                            </label>
+
+                            <select name="kategori"
+                                    class="form-select"
+                                    required>
+
+                                <option value="">
+                                    Pilih Kategori
+                                </option>
+
+                                <option value="Dasar">
+                                    Dasar
+                                </option>
+
+                                <option value="Tas">
+                                    Tas
+                                </option>
+
+                                <option value="Caping">
+                                    Caping
+                                </option>
+
+                                <option value="Kipas">
+                                    Kipas
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Deskripsi
+                            </label>
+
+                            <textarea name="deskripsi"
+                                      class="form-control"
+                                      rows="4"
+                                      placeholder="Masukkan deskripsi video"></textarea>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Upload Video
+                            </label>
+
+                            <input type="file"
+                                   name="video_file"
+                                   class="form-control"
+                                   accept="video/*"
+                                   required>
+
+                        </div>
+
+
+                        <div class="mb-3">
+
+                            <label class="form-label">
+                                Durasi
+                            </label>
+
+                            <input type="text"
+                                   name="durasi"
+                                   class="form-control"
+                                   placeholder="Contoh: 15 Menit">
+
+                        </div>
+
+
+                        <div class="mb-4">
+
+                            <label class="form-label">
+                                Level
+                            </label>
+
+                            <select name="level"
+                                    class="form-select">
+
+                                <option value="Pemula">
+                                    Pemula
+                                </option>
+
+                                <option value="Menengah">
+                                    Menengah
+                                </option>
+
+                                <option value="Lanjutan">
+                                    Lanjutan
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="d-flex gap-2">
+
+                            <button type="submit"
+                                    class="btn btn-coklat px-4">
+
+                                <i class="bi bi-check-circle"></i>
+                                Simpan
+
+                            </button>
+
+                            <a href="/admin/video"
+                               class="btn btn-secondary px-4">
+
+                                Kembali
+
+                            </a>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
