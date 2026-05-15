@@ -8,7 +8,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 app.register_blueprint(api)
-app.secret_key = "secretkey_anyaman"
+app.secret_key = os.getenv("FLASK_SECRET_KEY")
 app.config["UPLOAD_FOLDER"] = "static/uploads"
 
 bcrypt = Bcrypt(app)

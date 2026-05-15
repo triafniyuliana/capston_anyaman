@@ -1,3 +1,4 @@
+import os
 from flask import Blueprint, request, jsonify
 from flask_bcrypt import Bcrypt
 from flask_cors import CORS
@@ -18,7 +19,7 @@ CORS(api)
 bcrypt = Bcrypt()
 
 # SECRET KEY
-SECRET_KEY = "secret123"
+SECRET_KEY = os.getenv("JWT_SECRET_KEY")
 
 
 # ======================
