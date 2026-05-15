@@ -3,13 +3,16 @@ from flask_bcrypt import Bcrypt
 from werkzeug.utils import secure_filename
 import os
 from db import get_db_connection
+from api import api
+from flask_cors import CORS
 
 app = Flask(__name__)
+app.register_blueprint(api)
 app.secret_key = "secretkey_anyaman"
 app.config["UPLOAD_FOLDER"] = "static/uploads"
 
 bcrypt = Bcrypt(app)
-
+CORS(app)
 
 # HALAMAN PERTAMA
 @app.route("/")
@@ -1151,4 +1154,8 @@ def logout_admin():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(
+        host="0.0.0.0",
+        port=5000,
+        debug=True
+    )
